@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto';
+    margin: 3vh 5vw;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main";
+}
+
+/* Start header */
+
+.header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .title {
+    color: #D2872C;
+}
+
+.header .nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.header .nav-item {
+    margin: 0 1vw;
+}
+
+.header .nav-item:last-of-type {
+    margin: 0;
+}
+
+.header .nav-item a {
+    text-decoration: none;
+    color: #766F68;
+    font-size: 1.2em;
+}
+
+.header .nav-mobile {
+    display: none;
+}
+
+/* End header */
+
+/* Start main */
+
+.main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "content image";
+    margin: 5vh -3vw 0 3vw;
+    color: #766F68;
+}
+
+.main .content {
+    grid-area: content;
+    z-index: 1;
+}
+
+.main .title {
+    font-size: 3.3em;
+}
+
+.main .text {
+    font-size: 1.3em;
+    margin: -3vh 15vw 6vh 0;
+}
+
+.main .btn {
+    background-color: #D2872C;
+    border: none;
+    border-radius: 10px;
+    width: 50%;
+    height: 13%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.main .image {
+    grid-area: image;
+    margin-left: -20vw;
+}
+
+.main .img {
+    margin-top: 8vh;
+    width: 100%;
+}
+
+/* End main */
+
+/* Mobile display */
+@media(max-width: 650px) {
+    .header .nav {
+        display: none;
+    }
+
+    .header .nav-mobile {
+        display: inline-block;
+    }
+
+    .main {
+        grid-template-columns: 1fr;
+        margin: 0;
+        grid-template-areas: 
+        "image"
+        "content";
+        text-align: center;
+    }
+
+    .main .image {
+        margin: 0;
+    }
+
+    .main .img {
+        margin-top: 0;
+    }
+
+    .main .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main .title {
+        margin-bottom: 2vh;
+    }
+
+    .main .text {
+        margin: 0 0 2vh 0;
+    }
+
+    .main .btn {
+        width: 70%;
+        height: 7vh;
+    }
+}
